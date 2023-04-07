@@ -10,22 +10,22 @@ jobs:
       with:
         node-version: 14.17.5
     - name: install dependencies
-      working-directory: ./ECE364D_RiskReduction_WeatherApp/weather
+      working-directory: ./WeatherApp/weather
       run: npm install
     - name: update npm
-      working-directory: ./ECE364D_RiskReduction_WeatherApp/weather
+      working-directory: ./WeatherApp/weather
       run: npm install -g npm
     - name: install wine
-      working-directory: ./ECE364D_RiskReduction_WeatherApp/weather
+      working-directory: ./WeatherApp/weather
       run: sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install wine && sudo apt-get install wine32
     - name: build react
-      working-directory: ./ECE364D_RiskReduction_WeatherApp/weather
+      working-directory: ./WeatherApp/weather
       run: npm run build
     - name: package electron
-      working-directory: ./ECE364D_RiskReduction_WeatherApp/weather
+      working-directory: ./WeatherApp/weather
       run: npm run dist
     - name: upload linux package
       uses: actions/upload-artifact@v2
       with:
         name: weather-app
-        path: ./ECE364D_RiskReduction_WeatherApp/weather/out
+        path: ./WeatherApp/weather/out

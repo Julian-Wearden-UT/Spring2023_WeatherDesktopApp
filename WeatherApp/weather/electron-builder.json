@@ -1,0 +1,24 @@
+{
+  "appId": "weather",
+  "productName": "Weather",
+  "directories": {
+    "app": "./",
+    "output": "./out"
+  },
+  "files": [
+    "node_modules/**/*",
+    "src/**/*",
+    "build/**/*"
+  ],
+  "mac": {
+    "target": "dmg",
+    "category": "public.app-category.weather"
+  },
+  "win": {
+    "target": "portable"
+  },
+  "linux": {
+    "target": ["deb"],
+    "category": "Weather"
+  }
+}
